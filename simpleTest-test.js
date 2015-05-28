@@ -41,9 +41,14 @@ var testCase = buster.testCase("Simple test", {
       assert.className(this.$('.btn.btn-primary.save-postal-code-home-change')[0],'btn btn-primary save-postal-code-home-change');
       this.type('.form-control.tb-postal-code-home', '228396',function()
         {
-          this.click('.btn.btn-primary.save-postal-code-home-change')
-          assert.className(this.$('.company-logo.text-center')[0], 'company-logo text-center');
-          done();
+          //this.click('.btn.btn-primary.save-postal-code-home-change', function(){
+            //assert.className(this.$('.fa.fa-check-circle.fa-lg.fa-fw.stores-check-icon')[0], 'fa fa-check-circle fa-lg fa-fw stores-check-icon');
+            //done();
+          //})
+            this.click('.btn.btn-primary.save-postal-code-home-change')
+            assert.className(this.$('.company-logo.text-center')[0], 'company-logo text-center');
+            done();
+          //})
       });
     }
 
