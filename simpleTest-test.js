@@ -22,33 +22,29 @@ var testCase = buster.testCase("Simple test", {
 
     },
 
-        "Click on available postal code with input": function(done)
+        "Click on available postal code with no input": function(done)
     {
         this.type('.form-control.tb-postal-code-home', '228396');
         this.click('.btn.btn-primary.save-postal-code-home-change', function()
         {
 
-          assert.equals(1, 1);
-          assert.className(this.$('.company-logo.text-center')[0], 'company-logo text-center');
+          //assert.equals(1, 1);
+          assert.contains(this.$('.error-msg.alert-zone-error-msg-home').text(), 'Enter your 6-digit postal code');
 
          done();
         });
       
     },
 
-    "Click on available postal code with no input": function(done)
+        "Click on available postal code with input": function(done)
     {
-        assert.className(this.$('.btn.btn-primary.save-postal-code-home-change')[0],'btn btn-primary save-postal-code-home-change');
-        this.type('.form-control.tb-postal-code-home', '228396');
-        this.click('.btn.btn-primary.save-postal-code-home-change', function()
+      assert.className(this.$('.btn.btn-primary.save-postal-code-home-change')[0],'btn btn-primary save-postal-code-home-change');
+      this.type('.form-control.tb-postal-code-home', '228396',function()
         {
-
-          assert.equals(1, 1);
+          this.click('.btn.btn-primary.save-postal-code-home-change')
           assert.className(this.$('.company-logo.text-center')[0], 'company-logo text-center');
-
-         done();
-        });
-      
+          done();
+      });
     }
 
 });
