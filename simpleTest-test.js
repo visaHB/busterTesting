@@ -24,7 +24,7 @@ var testCase = buster.testCase("Simple test", {
 
         "Click on available postal code with no input": function(done)
     {
-        this.type('.form-control.tb-postal-code-home', '228396');
+        //this.type('.form-control.tb-postal-code-home', '228396');
         this.click('.btn.btn-primary.save-postal-code-home-change', function()
         {
 
